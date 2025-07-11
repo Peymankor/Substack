@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Web Dashboard Development Workflow - Mobile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 10px;
+            background-color: #f8f9fa;
+            color: #333;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .step-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .box {
+            background: linear-gradient(145deg, #a5d8ff, #74c0fc);
+            border: 3px solid #1e1e1e;
+            border-radius: 15px;
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #1e1e1e;
+            width: 90%;
+            max-width: 320px;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        .tool-label {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: #fab005;
+            color: #000;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            border: 3px solid #000;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .arrow {
+            font-size: 56px;
+            color: #1e1e1e;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin: 0 8px;
+        }
+        .website-badge {
+            background: linear-gradient(145deg, #fab005, #fd7e14);
+            border: 1px solid #000;
+            border-radius: 6px;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+            text-align: center;
+            white-space: nowrap;
+            min-width: 50px;
+            flex-shrink: 0;
+        }
+        .website-badge:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+            color: #000;
+        }
+        .tools-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        .tools-grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            margin-top: 15px;
+            flex-wrap: nowrap;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        h1 {
+            text-align: center;
+            color: #1e1e1e;
+            margin-bottom: 30px;
+            font-size: 40px;
+            padding: 0 10px;
+        }
+        h2 {
+            color: #1e1e1e;
+            margin-bottom: 20px;
+            font-size: 32px;
+            text-align: center;
+        }
+        .process-flow {
+            background: white;
+            border-radius: 20px;
+            padding: 25px 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+        .phase-label {
+            background: linear-gradient(145deg, #e9ecef, #dee2e6);
+            border: 2px solid #6c757d;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 20px 0 15px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #495057;
+            font-size: 22px;
+        }
+        @media (min-width: 768px) {
+            .box {
+                width: 80%;
+                max-width: 380px;
+            }
+            .website-badge {
+                width: 100%;
+            }
+            h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Fitness Web Dashboard Development Workflow</h1>
+    
+    <div class="process-flow">
+        <div class="flowchart">
+            <!-- Block 1: Design Fitness Program with AI -->
+            <div class="phase-label">Block 1: Design Fitness Program with AI</div>
+            
+            <div class="step-container">
+                <div class="step-row">
+                    <div class="box">
+                        <div class="tool-label">User Input</div>
+                        <div>
+                            <strong>Step 1:</strong><br>
+                            Define Your<br>
+                            Fitness Goals
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Grok AI</div>
+                        <div>
+                            <strong>Step 2:</strong><br>
+                            Identify Target<br>
+                            Muscle Groups
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Grok AI</div>
+                        <div>
+                            <strong>Step 3:</strong><br>
+                            Select Specific<br>
+                            Exercises
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 2: Build Web Dashboard -->
+            <div class="phase-label">Block 2: Build Web Dashboard</div>
+            
+            <div class="step-container">
+                <div class="step-row">
+                    <div class="box">
+                        <div class="tool-label">User Input</div>
+                        <div>
+                            <strong>Step 4:</strong><br>
+                            Assess Current<br>
+                            Fitness Level
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Grok AI</div>
+                        <div>
+                            <strong>Step 5:</strong><br>
+                            Create 4-Week<br>
+                            Training Program<br>
+                            <small>(4 days/week)</small>
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Lovable</div>
+                        <div>
+                            <strong>Step 6:</strong><br>
+                            Build Dashboard<br>
+                            Website
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 3: Deploy the App -->
+            <div class="phase-label">Block 3: Deploy the App</div>
+            
+            <div class="step-container">
+                <div class="step-row">
+                    <div class="box">
+                        <div class="tool-label">GitHub</div>
+                        <div>
+                            <strong>Step 7:</strong><br>
+                            Connect Lovable to<br>
+                            GitHub Repository
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Cursor</div>
+                        <div>
+                            <strong>Step 8:</strong><br>
+                            Download & Customize<br>
+                            Source Code from GitHub to Cursors
+                        </div>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="box">
+                        <div class="tool-label">Netlify</div>
+                        <div>
+                            <strong>Step 9:</strong><br>
+                            Deploy to<br>
+                            Netlify
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html> 
