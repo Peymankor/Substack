@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard Workflow</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .box {
+            background: linear-gradient(145deg, #a5d8ff, #74c0fc);
+            border: 3px solid #1e1e1e;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e1e1e;
+            min-width: 200px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        .tool-label {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #fab005;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 2px solid #000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .arrow {
+            font-size: 40px;
+            color: #1e1e1e;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin: 0 15px;
+        }
+        .vertical-arrow {
+            font-size: 40px;
+            color: #1e1e1e;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            margin: 15px 0;
+        }
+        .tools-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .website-badge {
+            background: linear-gradient(145deg, #fab005, #fd7e14);
+            border: 2px solid #000;
+            border-radius: 25px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.2s;
+        }
+        .website-badge:hover {
+            transform: scale(1.05);
+            text-decoration: none;
+            color: #000;
+        }
+        h2 {
+            color: #1e1e1e;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .process-flow {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+            .box {
+                min-width: 180px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="process-flow">
+        <div class="flowchart">
+            <!-- Row 1: Planning Phase -->
+            <div class="row">
+                <div class="box">
+                    <div class="tool-label">User Input</div>
+                    <div>
+                        <strong>Step 1:</strong><br>
+                        Define Your<br>
+                        Fitness Goals
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Grok AI</div>
+                    <div>
+                        <strong>Step 2:</strong><br>
+                        Identify Target<br>
+                        Muscle Groups
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Grok AI</div>
+                    <div>
+                        <strong>Step 3:</strong><br>
+                        Select Specific<br>
+                        Exercises
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Assessment & Program Creation -->
+            <div class="row">
+                <div class="box">
+                    <div class="tool-label">User Input</div>
+                    <div>
+                        <strong>Step 4:</strong><br>
+                        Assess Current<br>
+                        Fitness Level
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Grok AI</div>
+                    <div>
+                        <strong>Step 5:</strong><br>
+                        Create 4-Week<br>
+                        Training Program<br>
+                        <small>(4 days/week)</small>
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Lovable</div>
+                    <div>
+                        <strong>Step 6:</strong><br>
+                        Build Dashboard<br>
+                        Website
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Development Phase -->
+            <div class="row">
+                <div class="box">
+                    <div class="tool-label">GitHub</div>
+                    <div>
+                        <strong>Step 7:</strong><br>
+                        Connect Lovable to<br>
+                        GitHub Repository
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Cursor</div>
+                    <div>
+                        <strong>Step 8:</strong><br>
+                        Download & Customize<br>
+                        Source Code from GitHub to Cursors
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box">
+                    <div class="tool-label">Netlify</div>
+                    <div>
+                        <strong>Step 9:</strong><br>
+                        Deploy to<br>
+                        Netlify
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tools-section">
+        <h2>Required Tools & Platforms</h2>
+        <div class="tools-grid">
+            <a href="https://grok.com" class="website-badge" target="_blank">
+                Grok AI<br>
+                <small>Program Generation</small>
+            </a>
+            <a href="https://lovable.dev" class="website-badge" target="_blank">
+                Lovable<br>
+                <small>Website Builder</small>
+            </a>
+            <a href="https://github.com" class="website-badge" target="_blank">
+                GitHub<br>
+                <small>Code Repository</small>
+            </a>
+            <a href="https://cursor.com" class="website-badge" target="_blank">
+                Cursor<br>
+                <small>Code Editor</small>
+            </a>
+            <a href="https://netlify.com" class="website-badge" target="_blank">
+                Netlify<br>
+                <small>Deployment</small>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

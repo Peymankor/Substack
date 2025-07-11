@@ -1,29 +1,58 @@
-# Here is How I Hacked My Fitness With AI
+# How I Built a Custom AI Fitness App in Under 1 Hour
 
-- I will explain here to you  how to develop a fitness app with AI. It will be costumized, on teh web, foloow basic rule of fitness with tracking system. I think you can implement it in less than one hour. It Is fascinating to see how you can build such tools with AI, where a few yaesr ago it would be almost impossible. Lets get started:
-****
+With the abundance of AI tools available today, I've built a few custom web dashboards for my personal and professional needs. You can now build web dashboards very quickly, even with minimal coding knowledge.
+
+I believe more people should use AI to "build" something. When used correctly, AI acts as an "amplifier" of human creativity. In this blog post, I'll show you how I built a web dashboard for designing, monitoring, and tracking my fitness program. You can check it out here: [Fitness App](https://fitnessappdemo2025.netlify.app/)
+
+![Fitness App](img/website.png){width="100%"}
+
+My goal isn't to showcase how amazing the app is :) (it's not the best app in the world!), but rather to inspire you on how you can partner with AI tools to create something useful. I find joy in building on my ideas and sharing them with the world.
+
+Here, first I will explain the overall workflow of how I built this web dashboard, broken down to steps.
+
+
+
 ## Workflow
 
-This the teh workflow of how I build this web dasboard:
+This is the workflow of how I build this web dashboard:
 
-[![Fitness App Workflow](layout.png)](layout.excalidraw)
+![Fitness App Workflow](img/design.png){width="100%"}
 
 
-Essnetially, the workflow has three main blocks:
+Essentially, as you can see I am stacking up a few websites/tools to build this web dashboard. They all free to use. These tools are
 
-- The first one, is more to define goals, instruction and how to communicate with AI tool as it is Fitness Programmer
-- In second, we use AI to generate the core of the webdabsoard simply with prompting
-- Latsly, we need to adjust the source code, then deploy it on the web.
+- Grok3 as AI model for planning and brainstorming [Grok3](https://grok.com)
+- Lovable as website builder [Lovable](https://lovable.dev)
+- GitHub as code repository [GitHub](https://github.com)
+- Cursor as code editor [Cursor](https://cursor.com)
+- Netlify as tool to deploy the web dashboard [Netlify](https://netlify.com)
+
+If this workflow feels overwhelming, you can start even more simply: just visit [Lovable](https://lovable.dev) and enter a prompt like "build a web dashboard for fitness program." This will give you a quick idea of how easy it is to get started building your own dashboard.
+
+The workflow I recommend offers greater reliability and control—something I've refined through experience. In the following sections, I'll break down each step and show exactly how I leveraged AI to build this web dashboard.
+
+This process is divided into three main phases:
+
+- **Block 1 (Steps 1–3):** Define your fitness goals and communicate with the AI as your virtual fitness coach.
+- **Block 2 (Steps 4–6):** Build the web dashboard using Lovable, turning your AI-generated program (Block 1) into an interactive, trackable platform.
+- **Block 3 (Steps 7–9):** Deploy your web dashboard online with Netlify, making it accessible and easy to update or share.
+
 
 Lets get started.
 
-### AI as Fitness Programmer
+### Block 1 (Step 1-3): Defining Fitness Goal and designing Program
 
-The first step to build this web dasboard is define our fitness goal to the AI. Here, I will use Grok3 to communcate with AI. After that I will ask AI to what muscles I need to work and what exercises I need to work on those muscles.
+Here, first thing to do is to define the fitness goal. I think that is personal and you can define it as you want. Then, we use the AI to figure out what muscle/body part need to be developed to achieve that fitness goal. Then, figuring out what exercises are needed to develop those muscles.
+
+I did some prompt engineering, and you can see the short version of my prompt to communicate with AI. Here I use Grok3 (www.grok.com) as AI model.
+
+
+#### Step 1 and Step 2:
 
 *Prompt to use with Grok3:*
 
 ```python
+
 You are an expert strength and conditioning coach with extensive knowledge of muscle hypertrophy and body composition training.
 
 My specific fitness goal: Develop a muscular, well-defined upper body with the classic "V-taper" physique (wide shoulders tapering to a narrow waist).
@@ -37,10 +66,13 @@ Please complete these tasks:
 Please think through this step-by-step, considering both the biomechanics of creating this aesthetic and the most effective training approaches.
 
 ```
-We get the reply from the grok3 as follows:
+You will get different reply from the grok3, depending on the fitness goal you have. Here is the reply I got:
 
 ```python
-To achieve your goal of developing a muscular, well-defined upper body with the classic V-taper physique—characterized by wide shoulders and a broad back tapering to a narrow waist—you need to prioritize specific muscle groups that contribute to upper body width, thickness, and overall aesthetics. Below, I’ve identified the five most important muscle groups to focus on, along with explanations of their roles in creating this physique and evidence-based support for each recommendation. This selection is guided by biomechanics and established training principles for hypertrophy and aesthetic development.
+To achieve your goal of developing a muscular, well-defined upper body with the classic V-taper ...
+
+
+Rest....
 
 ---
 
@@ -81,7 +113,10 @@ By prioritizing these five muscle groups and training them with evidence-based e
 
 ```
 
-Now that we got list of muscle groups, that can help us to acheive goal we defined. Next step is to define the exercises that can help us to acheive the goal.
+
+#### Step 3:
+
+Now that we got list of muscle groups, that can help us to achieve goal we defined. Next step is to define the exercises that can help us to achieve the goal.
 
 *Prompt to use with Grok3:*
 
@@ -124,61 +159,11 @@ Equipment: Lat pulldown machine
 Biomechanics: Shoulder adduction and elbow flexion
 Rationale: Effective lat activation with adjustable resistance (Snyder & Leech, 2009)
 
-2. Deltoids (Shoulders)
-Overhead Dumbbell Presses
-
-Equipment: Dumbbells
-Biomechanics: Shoulder abduction and external rotation
-Rationale: Overall shoulder development (Schoenfeld, 2010)
-
-Dumbbell Lateral Raises
-
-Equipment: Dumbbells
-Biomechanics: Shoulder abduction
-Rationale: High lateral delt activation (Botton et al., 2013)
-
-3. Trapezius (Traps)
-Dumbbell Shrugs
-
-Equipment: Dumbbells
-Biomechanics: Scapular elevation
-Rationale: Upper trap isolation (Ekstrom et al., 2003)
-
-Bent-Over Barbell Rows
-
-Equipment: Barbell
-Biomechanics: Scapular retraction and shoulder extension
-Rationale: Middle trap and back thickness (Fenwick et al., 2009)
-
-4. Pectoralis Major (Chest)
-Incline Dumbbell Presses
-
-Equipment: Dumbbells, incline bench
-Biomechanics: Shoulder flexion and elbow extension at an incline
-Rationale: Upper chest activation (Barnett et al., 1995)
-
-Flat Barbell Bench Presses
-
-Equipment: Barbell, flat bench
-Biomechanics: Shoulder flexion and elbow extension
-Rationale: Overall chest development (Lehman, 2005)
-
-5. Biceps Brachii (Biceps)
-Standing Barbell Curls
-
-Equipment: Barbell
-Biomechanics: Elbow flexion with supinated forearms
-Rationale: Heavy loading for bicep growth (Oliveira et al., 2009)
-
-Preacher Curls
-
-Equipment: Preacher bench, EZ-bar or dumbbells
-Biomechanics: Elbow flexion with stretch emphasis
-Rationale: Enhanced bicep isolation (Youdas et al., 2010)
+rest...
 
 
 ```
-So essentially, we need to fcous on the following exercises:
+So our virtual fitness coach has given us the list of exercises that we need to focus on.
 
 A1: Wide-Grip Pull-Ups
 A2: Wide-Grip Lat Pulldowns
@@ -195,9 +180,15 @@ D2: Flat Barbell Bench Presses
 E1: Standing Barbell Curls
 E2: Preacher Curls
 
-## Baseline level, and build  a 4 week program
+## Block 2: Build Web Dashboard
 
-Ok, as you know to do the exercises, we need to have a baseline level, so we cna start with that. And I am not going to get data for all of these execrsie. For simplicty, I am going to give only two simple exercises and then *extraploate* the baseline level for the rest of exercises.
+
+##### Step 4 and 5:
+
+The way program works is that it start with baseline level, and then you add the weight and reps in **progression** way. Therefore, you need some baseline fitnes level to start. In best way, you need to have baseline level of all the execrises. Though, that may not possible. What we can do is just give some basic data, and let AI model to extrapolate the baseline level for the rest of exercises. Here, for simplicty I am just giving two exercises (push up and pull up) and let AI model to extrapolate the baseline level for the rest of exercises. However, the more data you give here, the better the programming will be. 
+
+
+
 
   - Number of pushup you can do:
   - Number of pullups you can do:
@@ -248,7 +239,7 @@ Format the program clearly with Week 1-4 layouts, making it easy to follow in th
 ```
 
 
-I got thsi results:
+I got the results as follows:
 
 ```python
 Here’s a 4-week, 4-days-per-week upper-body program built around your equipment, current abilities, and “V-taper” goal. We’ll rotate two workouts (Pull-A and Push-B), each twice weekly, with linear load and rep adjustments.
@@ -295,264 +286,32 @@ All weights given are starting loads approximated to leave \~2 reps in reserve a
 
 ---
 
-## Week 2
-
-* **Progression:** Add \~5% to each load.
-* **Rep targets:** Same as Week 1.
-
-### Pull-A
-
-* A2: 4×12 @ **63 kg**
-* C2: 4×12 @ **63 kg**
-* C1: 4×15 @ **2×42 kg**
-* E1: 3×12 @ **32 kg**
-
-### Push-B
-
-* B1: 4×12 @ **2×8.5 kg**
-* D2: 4×12 @ **63 kg**
-* B2: 4×15 @ **2×5.5 kg**
-* D1: 4×12 @ **2×11 kg**
-
----
-
-## Week 3
-
-* **Phase shift:** 4×8 for main lifts; drop shrugs & laterals to 4×10.
-* **Swap A2→A1:** Now using bodyweight pull-ups.
-* **+5% load** again on barbell/dumbbell movements.
-
-### Pull-A
-
-* **A1 Wide-Grip Pull-Ups**: 4×5 (unassisted BW)
-* C2: 4×8 @ **66 kg**
-* C1: 4×10 @ **2×44 kg**
-* E1: 3×10 @ **34 kg**
-
-### Push-B
-
-* B1: 4×8 @ **2×9 kg**
-* D2: 4×8 @ **66 kg**
-* B2: 4×10 @ **2×6 kg**
-* D1: 4×8 @ **2×12 kg**
-
----
-
-## Week 4
-
-* **Strength focus:** 5×5 on main lifts; 4×8 on accessories.
-* **+5% load** again on barbells/dumbbells.
-
-### Pull-A
-
-* **A1 Pull-Ups**: 5×5
-* C2: 5×5 @ **70 kg**
-* C1: 4×8 @ **2×46 kg**
-* E1: 3×8 @ **36 kg**
-
-### Push-B
-
-* B1: 5×5 @ **2×9.5 kg**
-* D2: 5×5 @ **70 kg**
-* B2: 4×8 @ **2×6.5 kg**
-* D1: 5×5 @ **2×13 kg**
-
----
-
-## 2. Rationale
-
-* **Exercise Selection & Pairing**
-
-  * **Vertical pull (A)** and **horizontal pull (C2)** develop lats and mid-back for width.
-  * **Shrugs (C1)** build upper traps to accentuate shoulder breadth.
-  * **Push-press/bench (B1/D2/D1)** cover all planes of shoulder and chest to sculpt the upper torso.
-  * **Lateral raises (B2)** isolate the medial deltoid for broader shoulders.
-  * **Curls (E1)** twice weekly maintain arm size for a balanced silhouette.
-
-* **Weekly Progression Scheme**
-
-  * Weeks 1–2: Higher volume (10–15 reps) to induce muscle damage and metabolic stress.
-  * Weeks 3–4: Lower reps (5–8) with heavier loads to drive neural adaptations and strength.
-  * \~5% load increases week-to-week keeps the stimulus progressive without overwhelming recovery.
-
----
-
-## 3. Recovery & Progression Guidelines
-
-1. **If you exceed the top of the rep range** (e.g. hit 13 reps in a 12-rep set):
-
-   * **Next session**, increase load by \~2.5–5%.
-
-2. **If you fail to complete prescribed sets/reps**:
-
-   * Keep the same load next session and aim to hit at least the lower bound (e.g. 10 of 12).
-   * If you’re more than 1–2 reps shy consistently, reduce load by \~10%.
-
-3. **Rest & Frequency**
-
-   * **48 hours** between same workout (mon→thu, tue→fri) ensures full recovery of muscles & CNS.
-   * Use Wed/Sat/Sun for active recovery: light mobility, walking, stretch.
-
----
-
-**Stick to the load increases and rep targets**, listen to your body, and you’ll build both size and strength to achieve that classic “V-taper.” Good luck!
-
+next weeks ....
 
 ```
 
 
-## Now, we need to build the webdasboard
+#### Step 6
 
-For building the dashboard, I will use the manus.io for building dashboard for tracking.
+Now, finished our brainstorming for designing the program, we can move to the next step, which is to build the web dashboard. For building the dashboard, I will use the lovable.dev.
 
-Here is a prompt you can use with manus.io (or similar AI dashboard builders) to generate a web dashboard for tracking your 4-week V-taper upper body program:
 
----
+Here is a prompt you can use with lovable.dev (or similar AI dashboard builders) to generate a web dashboard:
+
+
+![Lovable](img/lovable.png)
+
+
 
 **Prompt for AI Dashboard Generation:**
 
-You are an expert fitness dashboard designer. Please generate a web dashboard for tracking a 4-week, 4-day-per-week upper body strength and hypertrophy program. The workout plan is as follows:
-## Overview
 
-| Day     | Focus  | Workout             |
-| ------- | ------ | ------------------- |
-| Mon     | Pull-A | A2 → C2 → C1 → E1   |
-| Tue     | Push-B | B1 → D2 → B2 → D1   |
-| Wed     | Rest   | —                   |
-| Thu     | Pull-A | A2/1 → C2 → C1 → E1 |
-| Fri     | Push-B | B1 → D2 → B2 → D1   |
-| Sat/Sun | Rest   | —                   |
+```python
+You are an expert dashboard designer. Please generate a web dashboard for tracking a 4-week, 4-day-per-week upper body strength and hypertrophy program. The workout plan is as follows:
 
-* **Weeks 1–2**: Hypertrophy emphasis (8–12 RM), using lat-pulldowns (A2) to build volume.
-* **Weeks 3–4**: Strength/hypertrophy mix (5–8 RM), swapping in bodyweight pull-ups (A1) for raw strength.
+Here you give program you have generated in block 1.
 
-All weights given are starting loads approximated to leave \~2 reps in reserve at the top of the stated rep range.
-
----
-
-## Week 1
-
-### Pull-A (Mon, Thu)
-
-| Exercise                       | Sets×Reps | Load                  |
-| ------------------------------ | --------- | --------------------- |
-| **A2 Wide-Grip Lat Pulldowns** | 4×12      | 60 kg                 |
-| **C2 Bent-Over Barbell Rows**  | 4×12      | 60 kg                 |
-| **C1 Dumbbell Shrugs**         | 4×15      | 2×40 kg (80 kg total) |
-| **E1 Standing Barbell Curls**  | 3×12      | 30 kg                 |
-
-### Push-B (Tue, Fri)
-
-| Exercise                        | Sets×Reps | Load                  |
-| ------------------------------- | --------- | --------------------- |
-| **B1 Overhead Dumbbell Press**  | 4×12      | 2×8 kg (16 kg total)  |
-| **D2 Flat Barbell Bench Press** | 4×12      | 60 kg                 |
-| **B2 Dumbbell Lateral Raises**  | 4×15      | 2×5 kg (10 kg total)  |
-| **D1 Incline Dumbbell Press**   | 4×12      | 2×10 kg (20 kg total) |
-
----
-
-## Week 2
-
-* **Progression:** Add \~5% to each load.
-* **Rep targets:** Same as Week 1.
-
-### Pull-A
-
-* A2: 4×12 @ **63 kg**
-* C2: 4×12 @ **63 kg**
-* C1: 4×15 @ **2×42 kg**
-* E1: 3×12 @ **32 kg**
-
-### Push-B
-
-* B1: 4×12 @ **2×8.5 kg**
-* D2: 4×12 @ **63 kg**
-* B2: 4×15 @ **2×5.5 kg**
-* D1: 4×12 @ **2×11 kg**
-
----
-
-## Week 3
-
-* **Phase shift:** 4×8 for main lifts; drop shrugs & laterals to 4×10.
-* **Swap A2→A1:** Now using bodyweight pull-ups.
-* **+5% load** again on barbell/dumbbell movements.
-
-### Pull-A
-
-* **A1 Wide-Grip Pull-Ups**: 4×5 (unassisted BW)
-* C2: 4×8 @ **66 kg**
-* C1: 4×10 @ **2×44 kg**
-* E1: 3×10 @ **34 kg**
-
-### Push-B
-
-* B1: 4×8 @ **2×9 kg**
-* D2: 4×8 @ **66 kg**
-* B2: 4×10 @ **2×6 kg**
-* D1: 4×8 @ **2×12 kg**
-
----
-
-## Week 4
-
-* **Strength focus:** 5×5 on main lifts; 4×8 on accessories.
-* **+5% load** again on barbells/dumbbells.
-
-### Pull-A
-
-* **A1 Pull-Ups**: 5×5
-* C2: 5×5 @ **70 kg**
-* C1: 4×8 @ **2×46 kg**
-* E1: 3×8 @ **36 kg**
-
-### Push-B
-
-* B1: 5×5 @ **2×9.5 kg**
-* D2: 5×5 @ **70 kg**
-* B2: 4×8 @ **2×6.5 kg**
-* D1: 5×5 @ **2×13 kg**
-
----
-
-## 2. Rationale
-
-* **Exercise Selection & Pairing**
-
-  * **Vertical pull (A)** and **horizontal pull (C2)** develop lats and mid-back for width.
-  * **Shrugs (C1)** build upper traps to accentuate shoulder breadth.
-  * **Push-press/bench (B1/D2/D1)** cover all planes of shoulder and chest to sculpt the upper torso.
-  * **Lateral raises (B2)** isolate the medial deltoid for broader shoulders.
-  * **Curls (E1)** twice weekly maintain arm size for a balanced silhouette.
-
-* **Weekly Progression Scheme**
-
-  * Weeks 1–2: Higher volume (10–15 reps) to induce muscle damage and metabolic stress.
-  * Weeks 3–4: Lower reps (5–8) with heavier loads to drive neural adaptations and strength.
-  * \~5% load increases week-to-week keeps the stimulus progressive without overwhelming recovery.
-
----
-
-## 3. Recovery & Progression Guidelines
-
-1. **If you exceed the top of the rep range** (e.g. hit 13 reps in a 12-rep set):
-
-   * **Next session**, increase load by \~2.5–5%.
-
-2. **If you fail to complete prescribed sets/reps**:
-
-   * Keep the same load next session and aim to hit at least the lower bound (e.g. 10 of 12).
-   * If you’re more than 1–2 reps shy consistently, reduce load by \~10%.
-
-3. **Rest & Frequency**
-
-   * **48 hours** between same workout (mon→thu, tue→fri) ensures full recovery of muscles & CNS.
-   * Use Wed/Sat/Sun for active recovery: light mobility, walking, stretch.
-
-The webdasboard should be user-friendly and visually appealing, suitable for beginners and intermediates.
-
-**Webdasboard Requirements:**
+**webdashboard Requirements:**
 
 1. **Program Overview Section**
    - Display a summary of the 4-week program structure (days, split, focus).
@@ -591,15 +350,65 @@ The webdasboard should be user-friendly and visually appealing, suitable for beg
 - Clean, modern, and motivating.
 - Use color coding for different muscle groups or workout types.
 
-**Export/Share:**
-- Option to export workout logs and progress charts as PDF or CSV.
-
 ---
 
 Please generate the dashboard code or configuration to implement this functionality, using best practices for usability and fitness tracking.
+```
+ After running the prompt, and perhaps do some adjustment, probably you can get the working version of your web dashboard. Now, at this step we can move to Block 3, which is deploying the web dashboard on the web.
+
+### Block 3: Deploy the web dashboard
+
+
+##### Step 7
+
+So after the bulk of webdashboard is done, I like to push my coe to Github repo, so that I can **fine-tune** it more in your favorite IDE, Cursor for example. To do that, you just need to go top right of the Lovable and click on the **Github** icon.
+
+
+![Github](img/image_github.png)
+
+
+#### Step 8
+
+After that, I can bring the repo to the Cursor IDE, or Copilot IDE, or any other IDE that you like. Now the code is lcoally available, and under version control. I find that I can strat nicely to build bulk of things with Lobvobale fist, then bring it to the IDE  so can I can fine-tune it more.
+
+You need to run flowlwing code to run websdashbiad lcoally:
+
+```bash
+npm install
+npm run dev
+```
+
+Then, yoy will get everthug ready isnide your cirsor. 
+
+![Github](img/image_cursor.png)
 
 
 
 
 
-## Deploy the webdasboard
+
+
+#### Step 9
+
+
+For deployment, I use the free version of Netlify. I found it it is very simple website to deploy your website, and it is very easy to use. You just need to follow these steps:
+
+- Go to "Project"
+- Click on "Add new project"
+- Select "Import an existing project"
+- Select "GitHub"
+- Select the repository you want to deploy (the webdashboard repo)
+- Click on "Deploy"
+
+![Netlify](img/github.png)
+
+
+![Netlify](img/deploy.png)
+
+
+After that, you will get a link to your website. You can share it with your friends and family.
+
+
+
+
+
